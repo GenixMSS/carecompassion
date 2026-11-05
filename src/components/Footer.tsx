@@ -57,7 +57,7 @@ export function Footer() {
           ) : (
             <form
               onSubmit={handleSubscribe}
-              className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-3 bg-black/40 border border-white/60 rounded-full p-2"
+              className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center gap-3 bg-black/40 border border-white/60 rounded-2xl sm:rounded-full p-3 sm:p-2"
             >
               <input
                 type="email"
@@ -65,7 +65,7 @@ export function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="ENTER YOUR EMAIL ADDRESS"
-                className="w-full bg-transparent px-6 py-3 text-xs font-semibold tracking-wider text-white placeholder:text-white/70 focus:outline-none"
+                className="w-full bg-transparent px-4 sm:px-6 py-3 text-center sm:text-left text-xs font-semibold tracking-wider text-white placeholder:text-white/70 focus:outline-none"
               />
               <button
                 type="submit"

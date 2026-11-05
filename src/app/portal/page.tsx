@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ShieldCheck,
@@ -18,6 +19,15 @@ import {
 import { familyLogin, familySignup } from "./actions";
 import { createClient } from "@/utils/supabase/server";
 import { getSupabaseEnv } from "@/utils/supabase/config";
+
+export const metadata: Metadata = {
+  title: "Family & Client Care Portal | Real-Time Clinical Insights & Vitals",
+  description:
+    "Sign in to the Genix Family & Client Care Portal for real-time shift check-ins, daily vitals, medication adherence, ADL logs, and secure PDF/Word document uploads.",
+  alternates: {
+    canonical: "/portal",
+  },
+};
 
 interface FamilyPortalPageProps {
   searchParams: Promise<{

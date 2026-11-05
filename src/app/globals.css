@@ -5,10 +5,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
-    @apply bg-white text-slate-800 antialiased selection:bg-genix-navy selection:text-white;
+    @apply bg-white text-slate-800 antialiased selection:bg-genix-navy selection:text-white overflow-x-hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {

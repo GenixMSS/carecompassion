@@ -26,9 +26,20 @@ export async function generateMetadata({ params }: CityPageProps): Promise<Metad
   const city = getCityBySlug(slug);
   if (!city) return { title: "City Not Found" };
 
+  const description = `${city.tagline}. Genix Medical Staffing Services provides 24/7 home care, Alzheimer's care, hospital-to-home recovery, and nurse staffing in ${city.name}, Georgia (${city.zipCodes.join(", ")}).`;
+
   return {
     title: `In-Home Senior Care, Memory Care & Medical Staffing in ${city.name}, GA`,
-    description: `${city.tagline}. Genix Medical Staffing Services provides 24/7 home care, Alzheimer's care, hospital-to-home recovery, and nurse staffing in ${city.name}, Georgia (${city.zipCodes.join(", ")}).`,
+    description,
+    alternates: {
+      canonical: `/service-areas/cities/${city.slug}`,
+    },
+    openGraph: {
+      title: `Home Care & Medical Staffing in ${city.name}, GA | GenixMSS`,
+      description,
+      url: `https://genixmss.com/service-areas/cities/${city.slug}`,
+      images: [city.image],
+    },
   };
 }
 

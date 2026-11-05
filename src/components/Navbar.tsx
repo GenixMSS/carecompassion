@@ -60,7 +60,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-genix-navy">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-xs font-bold uppercase tracking-wider text-genix-navy">
           <Link
             href="/"
             className={`hover:text-genix-crimson transition-colors py-2 ${
@@ -100,7 +100,10 @@ export function Navbar() {
             </Link>
 
             {servicesOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full w-[920px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 grid grid-cols-4 gap-6 normal-case tracking-normal">
+              <div
+                onClick={() => setServicesOpen(false)}
+                className="fixed left-1/2 -translate-x-1/2 top-20 w-[min(920px,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 grid grid-cols-2 xl:grid-cols-4 gap-6 normal-case tracking-normal z-50"
+              >
                 {SERVICE_PILLARS.map((pillar) => (
                   <div key={pillar.slug} className="space-y-3">
                     <Link
@@ -125,7 +128,7 @@ export function Navbar() {
                   </div>
                 ))}
 
-                <div className="col-span-4 mt-2 pt-4 border-t border-slate-100 flex items-center justify-between bg-slate-50 -mx-6 -mb-6 px-6 py-3.5 rounded-b-2xl">
+                <div className="col-span-2 xl:col-span-4 mt-2 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 bg-slate-50 -mx-6 -mb-6 px-6 py-3.5 rounded-b-2xl">
                   <div className="flex items-center gap-6 text-xs font-semibold text-slate-600">
                     <Link
                       href="/facility-staffing"
@@ -174,7 +177,10 @@ export function Navbar() {
             </Link>
 
             {areasOpen && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full w-[540px] bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 normal-case tracking-normal">
+              <div
+                onClick={() => setAreasOpen(false)}
+                className="absolute left-1/2 -translate-x-1/2 top-full w-[min(540px,calc(100vw-2rem))] bg-white rounded-2xl shadow-2xl border border-slate-200 p-5 normal-case tracking-normal z-50"
+              >
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
                   <div>
                     <p className="font-heading font-bold text-sm text-genix-navy">

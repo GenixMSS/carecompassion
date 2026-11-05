@@ -36,9 +36,9 @@ export function ConciergeWidget() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-50">
       {open ? (
-        <div className="w-[350px] sm:w-[380px] rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
+        <div className="w-[calc(100vw-2rem)] max-w-[380px] rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-200">
           {/* Header */}
           <div className="bg-genix-navy text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">

@@ -43,7 +43,7 @@ export default function HomePage() {
             <span className="w-12 h-0.5 bg-white/70 rounded-full" />
           </div>
 
-          <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.12] tracking-tight">
+          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.12] tracking-tight">
             Seeking Compassionate Care For Yourself Or Loved Ones?
           </h1>
 
@@ -247,7 +247,7 @@ export default function HomePage() {
                 <img
                   src="/assets/services/About Genix Image.webp"
                   alt="Genix caregiver supporting senior client at home"
-                  className="w-full h-[460px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[460px] object-cover"
                 />
               </div>
             </div>

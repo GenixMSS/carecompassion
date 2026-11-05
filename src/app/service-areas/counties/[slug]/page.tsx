@@ -29,6 +29,15 @@ export async function generateMetadata({ params }: CountyPageProps): Promise<Met
   return {
     title: `Home Care & Medical Staffing in ${county.name}, GA`,
     description: county.summary,
+    alternates: {
+      canonical: `/service-areas/counties/${county.slug}`,
+    },
+    openGraph: {
+      title: `Home Care & Medical Staffing in ${county.name}, GA | GenixMSS`,
+      description: county.summary,
+      url: `https://genixmss.com/service-areas/counties/${county.slug}`,
+      images: [county.image],
+    },
   };
 }
 

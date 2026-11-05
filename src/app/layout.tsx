@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -50,9 +50,17 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#1c244b",
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://genixmss.com"),
   title: {
-    default: "Genix MSS | Your Partner in Healthcare Staffing & Home Care Solutions",
+    default:
+      "Genix MSS | Your Partner in Healthcare Staffing & Home Care Solutions",
     template: "%s | Genix Medical Staffing Services",
   },
   description:
@@ -66,7 +74,95 @@ export const metadata: Metadata = {
     "Alzheimer's Care Lithia Springs",
     "Hospital to Home Care",
     "RN LPN CNA Staffing Atlanta",
+    "In-Home Senior Care Georgia",
+    "Healthcare Facility Staffing Atlanta",
   ],
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://genixmss.com",
+    siteName: "Genix Medical Staffing Services (GenixMSS)",
+    title:
+      "Genix MSS | Healthcare Staffing & Compassionate Home Care in Metro Atlanta",
+    description:
+      "Hospital-grade medical oversight, personalized in-home care, memory support, and 24–48 hour RN, LPN & CNA facility staffing across Lithia Springs and 11 Metro Atlanta counties.",
+    images: [
+      {
+        url: "/assets/services/HeroImage.png",
+        width: 1200,
+        height: 630,
+        alt: "Genix Medical Staffing Services — Home Care & Clinical Staffing in Metro Atlanta",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Genix MSS | Healthcare Staffing & Compassionate Home Care in Metro Atlanta",
+    description:
+      "Personalized in-home care, memory support, and 24–48 hour RN, LPN & CNA facility staffing across Lithia Springs and Greater Atlanta.",
+    images: ["/assets/services/HeroImage.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "HomeAndConstructionBusiness"],
+  name: "Genix Medical Staffing Services",
+  alternateName: "GenixMSS",
+  url: "https://genixmss.com",
+  logo: "https://genixmss.com/assets/services/Genix Home Health Care & Medical Staffing Clean Logo.webp",
+  image: "https://genixmss.com/assets/services/HeroImage.png",
+  telephone: "+1-334-497-2713",
+  email: "info@genixmss.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lithia Springs",
+    addressRegion: "GA",
+    postalCode: "30122",
+    addressCountry: "US",
+  },
+  areaServed: [
+    "Douglas County, GA",
+    "Fulton County, GA",
+    "Cobb County, GA",
+    "DeKalb County, GA",
+    "Gwinnett County, GA",
+    "Clayton County, GA",
+    "Cherokee County, GA",
+    "Forsyth County, GA",
+    "Fayette County, GA",
+    "Henry County, GA",
+    "Rockdale County, GA",
+  ],
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "00:00",
+    closes: "23:59",
+  },
 };
 
 export default function RootLayout({
@@ -76,7 +172,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${nourd.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col font-sans">
+      <body className="min-h-screen flex flex-col font-sans overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
         <TopBar />
         <Navbar />
         <main className="flex-1">{children}</main>

@@ -23,6 +23,16 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      url: `https://genixmss.com/blog/${post.slug}`,
+      images: [post.image],
+    },
   };
 }
 

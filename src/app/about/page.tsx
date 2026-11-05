@@ -105,15 +105,15 @@ export default function AboutPage() {
 
             {/* Right Dual Image Collage matching about_screenshot.pdf */}
             <div className="lg:col-span-6 relative">
-              <div className="relative pl-12 pb-12">
+              <div className="relative pl-6 pb-8 sm:pl-12 sm:pb-12">
                 <div className="rounded-2xl overflow-hidden shadow-card border border-slate-100">
                   <img
                     src="/assets/services/About Us Side Image.png"
                     alt="Nurse holding stethoscope in heart shape"
-                    className="w-full h-[380px] object-cover"
+                    className="w-full h-[280px] sm:h-[380px] object-cover"
                   />
                 </div>
-                <div className="absolute bottom-0 left-0 w-52 h-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-52 sm:h-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                   <img
                     src="/assets/services/About Us Side Image 2.jpg"
                     alt="Doctor caring for young patient"
@@ -219,10 +219,10 @@ export default function AboutPage() {
               ].map((bar) => (
                 <div
                   key={bar.label}
-                  className="w-full bg-slate-200 rounded-xl overflow-hidden h-12 relative flex items-center"
+                  className="w-full bg-slate-200 rounded-xl overflow-hidden min-h-[3rem] relative flex items-center"
                 >
                   <div
-                    className="h-full bg-genix-navy rounded-xl flex items-center justify-between px-5 text-white text-xs sm:text-sm font-bold transition-all duration-700"
+                    className="h-full min-h-[3rem] py-2 bg-genix-navy rounded-xl flex items-center justify-between gap-2 px-3.5 sm:px-5 text-white text-[11px] sm:text-sm font-bold transition-all duration-700"
                     style={{ width: `${bar.value}%` }}
                   >
                     <span>{bar.label}</span>

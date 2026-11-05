@@ -23,6 +23,15 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   return {
     title: `${pillar.title} Services in Metro Atlanta`,
     description: pillar.description,
+    alternates: {
+      canonical: `/services/${pillar.slug}`,
+    },
+    openGraph: {
+      title: `${pillar.title} Solutions | Genix Medical Staffing Services`,
+      description: pillar.description,
+      url: `https://genixmss.com/services/${pillar.slug}`,
+      images: [pillar.heroImage],
+    },
   };
 }
 

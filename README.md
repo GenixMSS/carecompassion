@@ -28,11 +28,11 @@ Full-stack web application for **Genix Medical Staffing Services** built with **
    ```env
    NEXT_PUBLIC_SUPABASE_URL=https://vcbxbuobodrgspfugwsl.supabase.co
    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_vI67Y01f_jzXkqAqveNS2Q_4oNM5RF3
-   MAIL_TO=info@genixmedicalstaffing.com
-   MAIL_FROM=info@genixmedicalstaffing.com
+   MAIL_TO=info@genixmss.com
+   MAIL_FROM=info@genixmss.com
    SMTP_HOST=smtp.hostinger.com
    SMTP_PORT=465
-   SMTP_USER=info@genixmedicalstaffing.com
+   SMTP_USER=info@genixmss.com
    SMTP_PASS=your_real_hostinger_email_password
    ```
 
@@ -46,3 +46,4 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+

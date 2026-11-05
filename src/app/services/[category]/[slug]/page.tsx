@@ -44,6 +44,15 @@ export async function generateMetadata({
   return {
     title: `${service.title} | ${service.categoryName} in Metro Atlanta`,
     description: service.summary,
+    alternates: {
+      canonical: `/services/${category}/${service.slug}`,
+    },
+    openGraph: {
+      title: `${service.title} | Genix Medical Staffing Services`,
+      description: service.summary,
+      url: `https://genixmss.com/services/${category}/${service.slug}`,
+      images: [service.image],
+    },
   };
 }
 
